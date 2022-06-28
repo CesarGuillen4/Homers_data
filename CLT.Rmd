@@ -45,3 +45,11 @@ densityplot(x.avg,main="sample size 4")
 ```
 
 This graph has 3 different peaks, all of which are at different heights
+
+```{r}
+numb = 9
+Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+densityplot(x.avg,main="sample size 9")
+```
