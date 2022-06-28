@@ -24,7 +24,7 @@ Describe the resulting plot -  is it unimodal?  How many peaks does it have?  Ar
 
 Now take 2 random samples of 1000 points of the kkardashtemp variable and form 1000 points of their averages,
 
-The mean of the original data is 'rOriginalmean', Original the standard deviation is 'r OriginalSD'  
+The mean of the original data is `rOriginalmean`, the standard deviation is `rOriginalSD` The plot is not unimodel, and there are two peaks, the one on the right being just a little bit more higher than the peak at the left. 
 
 ```{r}
 numb = 2
@@ -34,7 +34,7 @@ x.avg <- apply(mdata,1,mean)
 densityplot(x.avg,main="sample size 2")
 ```
 
-The plot is not unimodel, and it has three peaks for the sample size of two. The two peaks that are at the end and beginning of the plot are the same size, while the one peak at the middle are far greater in size than both of the smaller peaks. The mean is 'rOriginalmean' and, and the Standard Deviation is 'rOriginalSD'. 
+The plot is not unimodel, and it has three peaks for the sample size of two. The two peaks that are at the end and beginning of the plot are the same size, while the one peak at the middle are far greater in size than both of the smaller peaks. The mean is `rOriginalmean` and, and the Standard Deviation is `rOriginalSD`. 
 
 ```{r}
 numb = 4
@@ -44,7 +44,7 @@ x.avg <- apply(mdata,1,mean)
 densityplot(x.avg,main="sample size 4")
 ```
 
-This graph has 3 different peaks, all of which are at different heights
+This graph has 3 different peaks, all of which are at different heights. The graph is also not unimodel. The standard deviation of this graph is `rOriginalSD`, and the mean is `rOriginalmean`. 
 
 ```{r}
 numb = 9
@@ -53,3 +53,4 @@ mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
 densityplot(x.avg,main="sample size 9")
 ```
+
