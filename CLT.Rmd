@@ -24,13 +24,13 @@ Describe the resulting plot -  is it unimodal?  How many peaks does it have?  Ar
 
 Now take 2 random samples of 1000 points of the kkardashtemp variable and form 1000 points of their averages,
 
-The mean of the original data is `rOriginalmean`, the standard deviation is `rOriginalSD` The plot is not unimodel, and there are two peaks, the one on the right being just a little bit more higher than the peak at the left. 
+The mean of the original data is `rOriginalmean`, the standard deviation is `rOriginalSD`. The plot is not unimodel, and there are two peaks, the one on the right being just a little bit more higher than the peak at the left. 
 
 ```{r}
 numb = 2
 Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
-x.avg <- apply(mdata,1,mean)
+x.avg <- apply(mdata,2,mean)
 densityplot(x.avg,main="sample size 2")
 ```
 
@@ -54,3 +54,14 @@ x.avg <- apply(mdata,1,mean)
 densityplot(x.avg,main="sample size 9")
 ```
 
+This graph is not unimodal, and it seems to have two, but very close peaks that are between 40 and 60. The standard deviation of this graph is `rOriginalSD`, and the mean of this data is `rOriginalmean`. 
+
+```{r}
+numb = 16
+Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+densityplot(x.avg,main="sample size 16")
+```
+
+This graph does not seem unimodel, and it has one main peak. But it does have multiple dips in the incline and decline in the graph. The standard deviation of the graph above is `rOriginalSD`, and the mean of the graph is `rOriginalmean`.
