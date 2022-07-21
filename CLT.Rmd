@@ -24,7 +24,7 @@ Describe the resulting plot -  is it unimodal?  How many peaks does it have?  Ar
 
 Now take 2 random samples of 1000 points of the kkardashtemp variable and form 1000 points of their averages,
 
-The mean of the original data is `rOriginalmean`, the standard deviation is `rOriginalSD`. The plot is not unimodel, and there are two peaks, the one on the right being just a little bit more higher than the peak at the left. 
+The mean of the original data is `Originalmean`, the standard deviation is `OriginalSD`. The plot is not unimodel, and there are two peaks, the one on the right being just a little bit more higher than the peak at the left. 
 
 ```{r}
 numb = 2
@@ -32,9 +32,11 @@ Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,2,mean)
 densityplot(x.avg,main="sample size 2")
+Originalmean<-mean(my1000)
+OriginalSD<-sd(my1000)
 ```
 
-The plot is not unimodel, and it has three peaks for the sample size of two. The two peaks that are at the end and beginning of the plot are the same size, while the one peak at the middle are far greater in size than both of the smaller peaks. The mean is `rOriginalmean` and, and the Standard Deviation is `rOriginalSD`. 
+The plot is not unimodel, and it has three peaks for the sample size of two. The two peaks that are at the end and beginning of the plot are the same size, while the one peak at the middle are far greater in size than both of the smaller peaks. The mean is 48.642, and the Standard Deviation is 41.746. 
 
 ```{r}
 numb = 4
@@ -42,6 +44,8 @@ Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
 densityplot(x.avg,main="sample size 4")
+Originalmean<-mean(my1000)
+OriginalSD<-sd(my1000)
 ```
 
 This graph has 3 different peaks, all of which are at different heights. The graph is also not unimodel. The standard deviation of this graph is `rOriginalSD`, and the mean is `rOriginalmean`. 
@@ -52,6 +56,8 @@ Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
 densityplot(x.avg,main="sample size 9")
+Originalmean<-mean(my1000)
+OriginalSD<-sd(my1000)
 ```
 
 This graph is not unimodal, and it seems to have two, but very close peaks that are between 40 and 60. The standard deviation of this graph is `rOriginalSD`, and the mean of this data is `rOriginalmean`. 
@@ -62,6 +68,22 @@ Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
 densityplot(x.avg,main="sample size 16")
+Originalmean<-mean(my1000)
+OriginalSD<-sd(my1000)
 ```
 
 This graph does not seem unimodel, and it has one main peak. But it does have multiple dips in the incline and decline in the graph. The standard deviation of the graph above is `rOriginalSD`, and the mean of the graph is `rOriginalmean`.
+
+
+```{r}
+numb = 36
+Hdata   <- sample(Homers_data$kkardashtemp ,size = numb*1000, replace=T)
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+densityplot(x.avg,main="sample size 36")
+Originalmean<-mean(my1000)
+OriginalSD<-sd(my1000)
+```
+
+This graph seems almost unimodel, but it isn't. It also seems to only have one peak in the middle of the graph. The standard deviation of this graph is `OriginalSD`, and the mean of the graph is `Originalmean`. 
+
